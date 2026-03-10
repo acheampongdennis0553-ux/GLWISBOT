@@ -47,4 +47,5 @@ bot_config.json
 *.log
 
 # Streamlit
-.streamlit/
+.streamlit/secrets.toml
+.streamlit/__pycache__/
