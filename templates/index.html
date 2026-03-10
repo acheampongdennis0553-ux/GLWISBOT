@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>GLWIS Academic Bot</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+</head>
+<body>
+    <div class="container">
+        <!-- Header -->
+        <header class="header">
+            <div class="header-content">
+                <div class="header-title">
+                    <h1>🎓 GLWIS Academic Bot</h1>
+                    <p class="subtitle">Glorious Living Word International School</p>
+                </div>
+                <div class="header-status">
+                    <span id="status-indicator" class="status loading"></span>
+                    <span id="status-text">Connecting...</span>
+                </div>
+            </div>
+        </header>
+
+        <!-- Main Chat Area -->
+        <main class="main-content">
+            <!-- Chat Messages -->
+            <div class="chat-container">
+                <div id="chat-messages" class="chat-messages">
+                    <div class="message bot welcome-message">
+                        <div class="message-content">
+                            <h3>👋 Welcome to GLWIS Academic Bot!</h3>
+                            <p>I can answer questions about Glorious Living Word International School.</p>
+                            <p><strong>Popular topics:</strong></p>
+                            <ul>
+                                <li>📍 School location & background</li>
+                                <li>📝 Admission & enrollment</li>
+                                <li>💰 Fees & payment plans</li>
+                                <li>🏫 Facilities & resources</li>
+                                <li>🏃 Activities & sports</li>
+                                <li>📞 Contact information</li>
+                            </ul>
+                            <p><em>Try asking me anything about GLWIS!</em></p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Sample Questions -->
+                <div id="sample-questions" class="sample-questions">
+                    <p>Quick questions:</p>
+                    <div class="question-buttons" id="question-buttons"></div>
+                </div>
+
+                <!-- Input Area -->
+                <div class="input-area">
+                    <form id="chat-form" class="chat-form">
+                        <div class="input-wrapper">
+                            <input 
+                                type="text" 
+                                id="message-input" 
+                                class="message-input"
+                                placeholder="Ask me about GLWIS... (e.g., Where is GLWIS located?)"
+                                autocomplete="off"
+                            >
+                            <button type="submit" class="send-btn">
+                                <span>Send</span>
+                                <span class="send-icon">➤</span>
+                            </button>
+                        </div>
+                    </form>
+                    <div class="input-help">
+                        💡 Type any question about school location, fees, admissions, facilities, activities, etc.
+                    </div>
+                </div>
+            </div>
+
+            <!-- Sidebar -->
+            <aside class="sidebar">
+                <!-- Quick Actions -->
+                <div class="sidebar-section">
+                    <h3>Quick Actions</h3>
+                    <button class="action-btn" id="clear-btn">
+                        🗑️ Clear Chat
+                    </button>
+                    <button class="action-btn" id="history-btn">
+                        📋 View History
+                    </button>
+                </div>
+
+                <!-- School Info -->
+                <div class="sidebar-section">
+                    <h3>School Info</h3>
+                    <div class="info-box">
+                        <p><strong>Location:</strong></p>
+                        <p>Beposo, Sekyere-Central<br>Ashanti Region, Ghana</p>
+                        
+                        <p><strong>Contact:</strong></p>
+                        <p>📞 +233553324378</p>
+                        
+                        <p><strong>Type:</strong></p>
+                        <p>Private Mission School</p>
+                        
+                        <p><strong>Grades:</strong></p>
+                        <p>Nursery - Junior High</p>
+                    </div>
+                </div>
+
+                <!-- Help -->
+                <div class="sidebar-section">
+                    <h3>Need Help?</h3>
+                    <p class="help-text">Ask me about:</p>
+                    <ul class="help-list">
+                        <li>Admission process</li>
+                        <li>Fee structure</li>
+                        <li>Facilities</li>
+                        <li>Activities</li>
+                        <li>Contact info</li>
+                    </ul>
+                </div>
+            </aside>
+        </main>
+
+        <!-- Footer -->
+        <footer class="footer">
+            <p>🎓 GLWIS Academic Bot | Made for Glorious Living Word International School</p>
+            <p class="footer-small">Bot Version 1.0 | Powered by OpenAI GPT-3.5</p>
+        </footer>
+    </div>
+
+    <!-- Chat History Modal -->
+    <div id="history-modal" class="modal">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h2>Chat History</h2>
+                <button class="close-btn">&times;</button>
+            </div>
+            <div class="modal-body" id="history-list">
+                <!-- History items will be added here -->
+            </div>
+            <div class="modal-footer">
+                <button class="btn btn-secondary close-modal">Close</button>
+                <button class="btn btn-danger" id="clear-history-btn">Clear All</button>
+            </div>
+        </div>
+    </div>
+
+    <script src="{{ url_for('static', filename='js/script.js') }}"></script>
+</body>
+</html>
